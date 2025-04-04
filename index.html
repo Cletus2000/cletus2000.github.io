@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/img/favicon.ico">
     <title data-en="Carlos Rocamora - Game Developer" data-es="Carlos Rocamora - Desarrollador de videojuegos">Carlos Rocamora - Game Developer</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -274,6 +275,12 @@
                 </div>
                 <div class="contact-form">
                     <form id="contact-form" action="https://formsubmit.co/14dc40a4ccb3c953bdb1c25a21e93302" method="POST">
+                        <!-- Estos dos elementos no aparecen pero son una medida anti bots -->
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="text" name="_honey" style="display:none">
+
+                        <input type="hidden" name="_next" value="https://cletus2000.github.io/contacted.html">
+
                         <div class="form-group">
                             <input type="text" name="name" id="name" placeholder="Your Name" data-en="Your Name" data-es="Tu Nombre" required>
                         </div>
