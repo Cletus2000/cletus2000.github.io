@@ -156,7 +156,7 @@ class ProjectsState {
     updateLanguage(language) {
         this.currentLanguage = language;
         
-        // Regenerar los proyectos planos para el nuevo idioma
+        // Recargar los proyectos para el nuevo idioma
         this.projectsData = this.originalProjectsData.map(project => 
             this.flattenProjectForLanguage(project)
         );
@@ -430,7 +430,7 @@ class ProjectsUI {
         }
     }
 
-    // (Manteniendo las partes anteriores de la clase, añadiendo estos métodos)
+    
     openProjectPopup(projectId) {
         // Intentar encontrar el proyecto primero en los proyectos filtrados
         this.state.currentProjectIndex = this.state.filteredProjects.findIndex(p => p.id === projectId);
