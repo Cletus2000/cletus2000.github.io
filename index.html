@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-en="Carlos Rocamora - Game Developer" data-es="Carlos Rocamora - Desarrollador de videojuegos">Carlos Rocamora - Game Developer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <div class="logo" data-en="Carlos Rocamora" data-es="Carlos Rocamora">Carlos Rocamora</div>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#home" data-en="Home" data-es="Inicio">Home</a></li>
+                    <li><a href="#about" data-en="About Me" data-es="Sobre Mí">About Me</a></li>
+                    <li><a href="#projects" data-en="Projects" data-es="Proyectos">Projects</a></li>
+                    <li><a href="#skills" data-en="Skills" data-es="Habilidades">Skills</a></li>
+                    <li><a href="#education" data-en="Experience" data-es="Experiencia">Experience</a></li>
+                    <li><a href="#contact" data-en="Contact" data-es="Contacto">Contact</a></li>
+                    <button id="theme-toggle"><i class="fas fa-moon"></i></button>
+                    <button id="language-toggle">
+                        <img src="https://flagcdn.com/w40/us.png" alt="US" class="flag-icon">
+                    </button>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 data-en="Hello, I'm <span>Carlos</span>" data-es="Hola, soy <span>Carlos</span>">Hello, I'm <span>Carlos</span></h1>
+                <h2 data-en="Game Developer & Multimedia Engineer" data-es="Desarrollador de Videojuegos & Ingeniero Multimedia">Game Developer & Multimedia Engineer</h2>
+                <p data-en="If one of my games makes even one person dream, then it was all worth it" data-es="Si un juego mio hace soñar aunque sea a una sola persona, todo habrá merecido la pena">If one of my games makes even one person dream, then it was all worth it</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn" data-en="View Projects" data-es="Ver Proyectos">View Projects</a>
+                    <a href="#contact" class="btn" data-en="Contact" data-es="Contacto">Contact</a>
+                </div>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/carlos-rocamora-colomer/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://cletus2000.itch.io/" target="_blank"><i class="fab fa-itch-io"></i></a>
+                    <a href="https://github.com/Cletus2000" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="img/profile-photo.png" alt="Carlos Rocamora">
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title" data-en="About Me" data-es="Sobre Mí">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p data-en="I am a final-year Multimedia Engineering student at the University of Alicante, specializing in game development."
+                    data-es="Soy estudiante de último curso de Ingeniería Multimedia en la Universidad de Alicante, especializado en el desarrollo de videojuegos.">
+                    I am a final-year Multimedia Engineering student at the University of Alicante, specializing in game development. </p>
+
+                    <p data-en="Ever since I was a child, I’ve been passionate about video games, but over time I realized that what truly fascinated me wasn’t just playing them, but understanding how they were made"
+                    data-es="Desde pequeño me han apasionado los videojuegos, pero con el tiempo descubrí que lo que realmente me fascinaba no era solo jugarlos, sino entender cómo estaban hechos.">
+                    I am a final-year Multimedia Engineering student at the University of Alicante, specializing in game development.</p>
+
+                    <p data-en="I'm absolutely fascinated by the blend of creativity and technology that goes into making video games, so my goal is to create interactive experiences that not only entertain and inspire players, but also makes me learn, discover new ideas, and grow as a professional and as a person."
+                    data-es="Me fascina la combinación de creatividad y tecnología que implica el desarrollo de videojuegos, por eso mi objetivo es crear experiencias interactivas que no solo entretengan e inspiren a los jugadores, sino que también me ayuden a aprender, descubrir nuevas ideas y crecer como profesional y como persona.">
+                    I'm absolutely fascinated by the blend of creativity and technology that goes into making video games, so my goal is to create interactive experiences that not only entertain and inspire players, but also makes me learn, discover new ideas, and grow as a professional and as a person.</p>
+
+                    <!--
+                        <a href="docs/cv.pdf" download class="btn download-btn" data-en="Download CV <i class='fas fa-download'></i>" data-es="Descargar CV <i class='fas fa-download'></i>">Download CV <i class="fas fa-download"></i></a>
+                    -->
+                </div>
+                <div class="about-stats">
+                    <div class="stat-box">
+                        <i class="fas fa-gamepad"></i>
+                        <h3 data-en="Game Development" data-es="Desarrollo de Juegos">Game Development</h3>
+                        <p data-en="Experience with Unity and Unreal Engine, with knowledge of game mechanics, physics, and systems." data-es="Experiencia en Unity y Unreal Engine, con conocimientos de mecánicas, física y sistemas de juego.">Experience with Unity and Unreal Engine, with knowledge of game mechanics, physics, and systems.</p>
+                    </div>
+                    <div class="stat-box">
+                        <i class="fas fa-code"></i>
+                        <h3 data-en="Programming" data-es="Programación">Programming</h3>
+                        <p data-en="Proficient in C#, C++ y Java. Capable of implementing efficient and optimized algorithms." data-es="Competente en C#, C++ y Java. Capaz de implementar algoritmos eficientes y optimizados.">Proficient in C#, C++ and Java. Capable of implementing efficient and optimized algorithms.</p>
+                    </div>
+                    <div class="stat-box">
+                        <i class="fas fa-paint-brush"></i>
+                        <h3 data-en="Design" data-es="Diseño">Design</h3>
+                        <p data-en="Basic skills in UI/UX design for games and 3D modeling." data-es="Habilidades básicas en diseño de UI/UX para juegos y modelado 3D.">Basic skills in UI/UX design for games and 3D modeling.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title" data-en="My Projects" data-es="Mis Proyectos">My Projects</h2>
+            <p style="margin: 5%;" data-en="I’ve moved my projects to a dedicated section where you can explore them with better organization and search options.<br><br>Please check them out!" data-es="He movido mis proyectos a una sección a parte donde puedes explorarlos de forma más organizada y con opciones de búsqueda.<br><br>¡Por favor, no dudes en echarles un vistazo!"></p>
+        </div>
+        <div class="projects-cta">
+            <a href="/projects.html" style="width: 50%;" class="btn primary-btn" data-en="See more" data-es="Ver todos">See more</a>
+        </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title" data-en="My Skills" data-es="Mis Habilidades">My Skills</h2>
+            <div class="skills-content">
+                <div class="skills-category">
+                    <h3 data-en="Game Engines" data-es="Motores de Juegos">Game Engines</h3>
+                    <div class="skill-bars">
+                        <div class="skill-bar">
+                            <span class="skill-name">Unity</span>
+                            <div class="skill-progress">
+                                <div class="skill-percentage" style="width: 85%;">85%</div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <span class="skill-name">Unreal Engine</span>
+                            <div class="skill-progress">
+                                <div class="skill-percentage" style="width: 25%;">25%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skills-category">
+                    <h3 data-en="Programming Languages" data-es="Lenguajes de Programación">Programming Languages</h3>
+                    <div class="skill-bars">
+                        <div class="skill-bar">
+                            <span class="skill-name">C#</span>
+                            <div class="skill-progress">
+                                <div class="skill-percentage" style="width: 85%;">85%</div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <span class="skill-name">C++</span>
+                            <div class="skill-progress">
+                                <div class="skill-percentage" style="width: 80%;">80%</div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <span class="skill-name">Java</span>
+                            <div class="skill-progress">
+                                <div class="skill-percentage" style="width: 55%;">55%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skills-category">
+                    <h3 data-en="Tools & Technologies" data-es="Herramientas y Tecnologías">Tools & Technologies</h3>
+                    <div class="skills-grid">
+                        <div class="skill-icon">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </div>
+                        <div class="skill-icon">
+                            <i class="fa-brands fa-trello"></i>
+                            <span>Trello</span>
+                        </div>
+                        <div class="skill-icon">
+                            <i class="fa-brands fa-ubuntu"></i>
+                            <span>Ubuntu</span>
+                        </div>
+                        <div class="skill-icon">
+                            <i class="fa-solid fa-desktop"></i>
+                            <span>Desktop</span>
+                        </div>
+                        <div class="skill-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>Mobile</span>
+                        </div>
+                        <div class="skill-icon">
+                            <i class="fab fa-html5"></i>
+                            <span>HTML5</span>
+                        </div>
+                        <div class="skill-icon">
+                            <i class="fas fa-cubes"></i>
+                            <span>3DSMax</span>
+                        </div>
+                        <div class="skill-icon">
+                            <i class="fa-solid fa-bezier-curve"></i>
+                            <span>InkScape</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="education">
+        <div class="container">
+            <h2 class="section-title" data-en="Education & Experience" data-es="Educación y Experiencia">Education & Experience</h2>
+            <div class="timeline">
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        <span>2020</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3 data-en="Multimedia Engineering" data-es="Ingeniería Multimedia">Multimedia Engineering</h3>
+                        <h4 data-en="University of Alicante" data-es="Universidad de Alicante">University of Alicante</h4>
+                        <p data-en="Engineering degree with a specialization in game development and interactive applications. Gained experience in project management, design patterns, and programming best practices through multidisciplinary and diverse projects."
+                            data-es="Grado en ingeniería con especialización en desarrollo de videojuegos y aplicaciones interactivas. Adquirí experiencia en gestión de proyectos, patrones de diseño y buenas prácticas de programación a través de diversos trabajos multidisciplinares.">
+                            Engineering degree with a specialization in game development and interactive applications. Gained experience in project management, design patterns, and programming best practices through multidisciplinary and diverse projects.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        <span>2023</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3 data-en="Game Jam Winner" data-es="Ganador Game Jam">Game Jam Winner</h3>
+                        <h4>Maker Faire Galicia 2023.</h4>
+                        <p data-en="First place in the Maker Faire Galicia 2023 Game Jam with the game Color-AI. Developed the entire game in 48 hours using Unity, exploring 3D modeling and real-time material rendering with shaders."
+                            data-es="Primer lugar en la Game Jam Maker Faire Galicia 2023 con el juego Color-AI. Desarrollo completo en 48 horas utilizando Unity, explorando modelado 3D y renderizado de materiales en tiempo real con shaders.">
+                            First place in the Maker Faire Galicia 2023 Game Jam with the game Color-AI. Developed the entire game in 48 hours using Unity, exploring 3D modeling and real-time material rendering with shaders.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        <span>2025</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3 data-en="Game Jam Winner" data-es="Ganador Game Jam">Game Jam Winner</h3>
+                        <h4>Game Jam Alicante 2025</h4>
+                        <p data-en="First place in the Game Jam Alicante 2025 with the game Bubble Buddies, developed in under 48 hours using Unity. Contributed to gameplay programming, shaders and collision handling in a physics-based control scheme."
+                            data-es="Primer lugar en la Game Jam Alicante 2025 con el juego Bubble Buddies, desarrollado en menos de 48 horas utilizando Unity. Contribuí a la programación de la jugabilidad, shaders, gestión de colisiones en un esquema de control basado en físicas.">
+                            First place in the Game Jam Alicante 2025 with the game Bubble Buddies, developed in under 48 hours using Unity. Contributed to gameplay programming, shaders and collision handling in a physics-based control scheme.</p>
+                    </div>
+                </div>
+                
+                <!-- ... -->
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title" data-en="Contact" data-es="Contacto">Contact</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3 data-en="Email" data-es="Email">Email</h3>
+                            <p>pielcarlos@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3 data-en="Location" data-es="Ubicación">Location</h3>
+                            <p data-en="Alicante, Spain" data-es="Alicante, España">Alicante, Spain</p>
+                        </div>
+                    </div>
+                    <div class="contact-social">
+                        <a href="https://www.linkedin.com/in/carlos-rocamora-colomer/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://cletus2000.itch.io/" target="_blank"><i class="fab fa-itch-io"></i></a>
+                        <a href="https://github.com/Cletus2000" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <input type="text" name="name" id="name" placeholder="Your Name" data-en="Your Name" data-es="Tu Nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" id="email" placeholder="Your Email" data-en="Your Email" data-es="Tu Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="subject" id="subject" placeholder="Subject" data-en="Subject" data-es="Asunto" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" id="message" placeholder="Your Message" data-en="Your Message" data-es="Tu Mensaje" required></textarea>
+                        </div>
+                        <button type="submit" class="btn primary-btn" data-en="Send Message" data-es="Enviar Mensaje">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p data-en="&copy; 2025 Carlos Rocamora Colomer. All rights reserved." data-es="&copy; 2025 Carlos Rocamora Colomer. Todos los derechos reservados.">&copy; 2025 Carlos Rocamora Colomer. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#home" data-en="Home" data-es="Inicio">Home</a>
+                    <a href="#projects" data-en="Projects" data-es="Proyectos">Projects</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

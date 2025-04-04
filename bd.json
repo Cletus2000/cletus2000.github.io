@@ -1,0 +1,54 @@
+[
+    {
+        "id": 1,
+        "title": {
+            "en": "2D Platformer Game",
+            "es": "Juego de Plataformas 2D"
+        },
+        "description": {
+            "en": "A 2D platformer game developed in Unity with pixel art graphics. Includes 10 levels, different enemies, and unique game mechanics. The game is optimized for mobile and desktop.",
+            "es": "Un juego de plataformas con gráficos pixel art desarrollado en Unity. Incluye 10 niveles, diferentes enemigos y mecánicas de juego únicas. El juego está optimizado para dispositivos móviles y ordenadores."
+        },
+        "shortDescription": {
+            "en": "2D Platformer Game",
+            "es": "Juego de plataformas estilo pixel art en Unity"
+        },
+        "thumbnail": "./img/hero-bg.svg",
+        "images": [
+            "./img/hero-bg.svg",
+            "./img/PosterDonutPanic!.png",
+            "./img/hero-bg.svg",
+            "./img/qr-code.png",
+            "./img/hero-bg.svg"
+        ],
+        "tags": {
+            "en": ["Unity", "C#", "Pixel Art", "Game", "2D", "Unity", "C#", "Pixel Art", "Game", "2D", "Unity", "C#", "Pixel Art", "Game", "2D"],
+            "es": ["Unity", "C#", "Pixel Art", "Juego", "2D", "Unity", "C#", "Pixel Art", "Juego", "2D", "Unity", "C#", "Pixel Art", "Juego", "2D"]
+        },
+        "date": "14-10-2023"
+    },
+    {
+        "id": 2,
+        "title": {
+            "en": "2D Platformer Game",
+            "es": "Juego de Plataformas 2D"
+        },
+        "description": {
+            "en": "A 2D platformer game developed in Unity with pixel art graphics. Includes 10 levels, different enemies, and unique game mechanics. The game is optimized for mobile and desktop.",
+            "es": "Un juego de plataformas con gráficos pixel art desarrollado en Unity. Incluye 10 niveles, diferentes enemigos y mecánicas de juego únicas. El juego está optimizado para dispositivos móviles y ordenadores."
+        },
+        "shortDescription": {
+            "en": "2D Platformer Game",
+            "es": "Juego de plataformas estilo pixel art en Unity"
+        },
+        "thumbnail": "./img/hero-bg.svg",
+        "images": [
+            "./img/hero-bg.svg"
+        ],
+        "tags": {
+            "en": ["Unity", "C#", "Pixel Art","inglés", "Game", "2D", "Unity", "C#", "Pixel Art", "Game", "2D", "Unity", "C#", "Pixel Art", "Game", "2D"],
+            "es": ["Unity", "C#", "Pixel Art","español", "Juego", "2D", "Unity", "C#", "Pixel Art", "Juego", "2D", "Unity", "C#", "Pixel Art", "Juego", "2D"]
+        },
+        "date": "2023-11-15"
+    }
+]

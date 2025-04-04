@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-en="Projects - Carlos Rocamora" data-es="Proyectos - Carlos Rocamora">Projects - Carlos Rocamora</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+            margin-top: 100px;
+        }
+        
+        /* Barra de filtros */
+        .filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 50px;
+            padding: 20px;
+            background-color: var(--color-elements);
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .search-box {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        input[type="text"], select {
+            width: 100%;
+            padding: 10px 15px;
+            border: 2px solid var(--color-accent-primary);
+            border-radius: 15px;
+            font-size: 1rem;
+            background-color: var(--color-subelements);
+            color: var(--color-text-primary);
+        }
+        
+        .tag-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .tag {
+            padding: 8px 20px;
+            border-radius: 30px;
+            background-color: var(--color-subelements);
+            border: none;
+            cursor: pointer;
+            font-family: var(--font-primary);
+            font-weight: 500;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            color: var(--color-text-secondary);
+        }
+        
+        .tag:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-strong);
+        }
+
+        .tag.active, .tag:hover {
+            background: var(--gradient-primary);
+            color: var(--color-text-on-accent);
+        }
+        
+        /* Galería de proyectos */
+        .section-background {
+            background-color: var(--color-background-secondary);
+        }
+        .projects-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            background-color: var(--color-background-secondary);
+        }
+        
+        .project-card {
+            background-color: var(--color-elements);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 3px 15px var(--shadow);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .project-card:hover {
+            box-shadow: none;
+            
+        }
+        
+        .project-image {
+            width: 100%;
+            max-height: fit-content;
+            object-fit: cover;
+        }
+        
+        .project-info {
+            padding: 20px;
+        }
+        
+        .project-title {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+        
+        
+        
+        .project-description {
+            margin: 10px 0;
+            color: var(--color-text-secondary);
+        }
+        
+        /* Popup estilo modal */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.75);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /*Creo que zindex es una mala práctica, pero aqui es para que esté por encima del nav*/
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+        }
+        
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .popup {
+            background-color: var(--color-elements);
+            width: 85%;
+            max-width: 1200px;
+            height: 85%;
+            max-height: 1000px;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .popup-content {
+            padding: 30px;
+            overflow-y: auto;
+            flex: 1;
+        }
+        
+        .popup-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        
+        .popup-title {
+            font-size: 2rem;
+            margin-right: 20px;
+        }
+        
+        .popup-navigation {
+            display: flex;
+            align-items: center;
+            padding: 10px 30px;
+            background-color: var(--color-subelements);
+            text-decoration: dashed;
+        }
+        
+        .popup-gallery {
+            display: flex;
+            gap: 15px;
+            overflow-x: auto;
+            padding: 20px 0;
+        }
+        
+        .popup-gallery img {
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .popup-gallery img:hover {
+            transform: scale(1.05);
+        }
+        
+        .close-btn, .nav-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--color-text-primary);
+            transition: color 0.2s ease;
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            font-size: 3rem;
+            z-index: 2;
+        }
+        
+        .close-btn:hover, .nav-btn:hover {
+            color: var(--color-accent-primary);
+        }
+        
+        .nav-btn {
+            padding: 5px;
+        }
+        
+        .nav-btn:disabled {
+            visibility: hidden;
+        }
+        
+        .nav-info {
+            flex: 1;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--color-text-secondary);
+        }
+        
+        .popup-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        .popup-tag {
+            background-color: var(--color-subelements);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .popup-description {
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+        
+        .project-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        #fullscreen-image {
+            width: 80%;
+            height: auto;
+            max-width: 80%;
+            max-height: 85%;
+            object-fit: contain;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -10;
+        }
+
+        
+        @media (max-width: 768px) {
+            .filters {
+                flex-direction: column;
+            }
+            
+        }
+        @media (max-width: 665px) {
+            .projects-grid {
+                grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+            }
+            
+        }
+    </style>
+</head>
+<header>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="logo">
+                <div class="logo" data-en="Carlos Rocamora" data-es="Carlos Rocamora">Carlos Rocamora</div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" data-en="Home" data-es="Inicio">Home</a></li>
+                <li><a href="#about" data-en="About Me" data-es="Sobre Mí">About Me</a></li>
+                <li><a href="#projects" data-en="Projects" data-es="Proyectos">Projects</a></li>
+                <li><a href="#skills" data-en="Skills" data-es="Habilidades">Skills</a></li>
+                <li><a href="#education" data-en="Experience" data-es="Experiencia">Experience</a></li>
+                <li><a href="#contact" data-en="Contact" data-es="Contacto">Contact</a></li>
+                <button id="theme-toggle"><i class="fas fa-moon"></i></button>
+                <button id="language-toggle">
+                    <img src="https://flagcdn.com/w40/us.png" alt="US" class="flag-icon">
+                </button>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </div>
+</header>
+<body>
+    <section class="container">
+        <h1 data-en="My Projects" data-es="Mis Proyectos"></h1>
+        <div class="filters">
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Buscar proyectos...">
+            </div>
+            <div>
+                <select id="sort-select">
+                    <option value="date-desc" data-en="Newer first" data-es="Más recientes primero"></option>
+                    <option value="date-asc" data-en="Older first" data-es="Más antiguos primero"></option>
+                    <option value="name-asc" data-en="Name (A-Z)" data-es="Nombre (A-Z)"></option>
+                    <option value="name-desc" data-en="Name (Z-A)" data-es="Nombre (Z-A)"></option>
+                </select>
+            </div>
+            <div class="tag-filters" id="tag-filters">
+                <!-- JSON -->
+            </div>
+        </div>
+    </section>
+        
+    <div class="section-background">
+        <section class="projects-grid" id="projects-grid">
+            <!-- JSON -->
+        </section>
+    </div>
+    </div>
+    
+    <!-- Open project details -->
+    <div class="overlay" id="overlay">
+        <div class="popup">
+            <button class="close-btn" id="close-popup">&times;</button>
+            <div class="popup-content" id="popup-content">
+                <!-- Project details will be loaded from JSON -->
+            </div>
+            <div class="popup-navigation">
+                <button class="nav-btn" id="prev-project"><i class="fas fa-angle-left"></i></button>
+                <div class="nav-info" id="nav-info"></div>
+                <button class="nav-btn" id="next-project"><i class="fas fa-angle-right"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
