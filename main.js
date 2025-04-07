@@ -92,11 +92,11 @@ navLinksItems.forEach(item => {
 // Bigger header on scroll
 const header = document.querySelector('header');
 window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
-    }
+    // if (window.scrollY > 50) {
+    //     header.classList.add('scrolled');
+    // } else {
+    //     header.classList.remove('scrolled');
+    // }
 });
 
 
@@ -203,6 +203,7 @@ class ProjectsState {
 class ProjectsUI {
     constructor(state) {
         this.state = state;
+        this.isPopupActive = false;
         this.initializeElements();
         this.setupEventListeners();
         this.setupImageGallery();
@@ -461,11 +462,18 @@ class ProjectsUI {
         // Mostrar el proyecto
         this.displayProjectInPopup(this.state.filteredProjects[this.state.currentProjectIndex]);
         
+        // Reset scroll position to top
+        this.elements.popupContent.scrollTop = 0;
+
         // Actualizar navegación
         this.updateNavigation();
         
         // Mostrar overlay
         this.elements.overlay.classList.add('active');
+        this.isPopupActive = true; // Activar el flag
+
+        // Block scrolling on body
+        document.body.style.overflow = 'hidden';
         
         // Actualizar URL
         this.state.urlParams.set('project', projectId);
@@ -547,8 +555,9 @@ class ProjectsUI {
         if (this.state.currentProjectIndex > 0) {
             this.state.currentProjectIndex--;
             this.displayProjectInPopup(this.state.filteredProjects[this.state.currentProjectIndex]);
+            // Reset scroll position to top
+            this.elements.popupContent.scrollTop = 0;
             this.updateNavigation();
-            
             // Actualizar URL
             this.state.urlParams.set('project', this.state.filteredProjects[this.state.currentProjectIndex].id);
             this.updateURL(false);
@@ -559,6 +568,8 @@ class ProjectsUI {
         if (this.state.currentProjectIndex < this.state.filteredProjects.length - 1) {
             this.state.currentProjectIndex++;
             this.displayProjectInPopup(this.state.filteredProjects[this.state.currentProjectIndex]);
+            // Reset scroll position to top
+            this.elements.popupContent.scrollTop = 0;
             this.updateNavigation();
             
             // Actualizar URL
@@ -568,6 +579,9 @@ class ProjectsUI {
     }
 
     closeProject() {
+        // Desactivar el flag inmediatamente
+        this.isPopupActive = false;
+        
         // Recordar los tags activos y otros parámetros importantes antes de modificar la URL
         const currentTags = this.state.urlParams.has('t') 
             ? this.state.urlParams.get('t') 
@@ -596,6 +610,8 @@ class ProjectsUI {
         
         // Actualizar también urlParams
         this.state.urlParams = newParams;
+        // Restore body scrolling
+        document.body.style.overflow = '';
         
         // Ocultar el overlay
         this.elements.overlay.classList.remove('active');
@@ -698,7 +714,7 @@ class ProjectsUI {
             left: 0;
             width: 100vw;
             height: 100vh;
-            background: rgba(0, 0, 0, 0.9);
+            background: rgba(0, 0, 0, 0.8);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -754,7 +770,7 @@ class ProjectsUI {
         this.imageCounter.id = 'image-counter';
         this.imageCounter.style = `
             position: absolute;
-            bottom: 20px;
+            bottom: 10px;
             left: 0;
             right: 0;
             text-align: center;
@@ -766,9 +782,10 @@ class ProjectsUI {
         // Imagen en pantalla completa
         this.fullscreenImage = document.createElement('img');
         this.fullscreenImage.id = 'fullscreen-image';
-        this.fullscreenImage.style.maxWidth = '90%';
-        this.fullscreenImage.style.maxHeight = '90%';
+        this.fullscreenImage.style.maxWidth = '85%';
+        this.fullscreenImage.style.maxHeight = 'calc(100vh - 150px)';
         this.fullscreenImage.style.objectFit = 'contain';
+        this.fullscreenImage.style.marginTop = '20px';
 
         // Añadir elementos al contenedor
         this.fullscreenContainer.appendChild(this.prevImageBtn);
@@ -783,12 +800,13 @@ class ProjectsUI {
         // Configurar eventos
         this.setupImageGalleryEvents();
     }
+    
 
     setupImageGalleryEvents() {
         // Abrir imagen en pantalla completa
         this.elements.popupContent.addEventListener('click', (e) => {
             const clickedImage = e.target.closest('.popup-gallery img');
-            if (clickedImage) {
+            if (clickedImage && this.isPopupActive) {
                 this.openFullscreenImage(clickedImage.src);
             }
         });
@@ -822,7 +840,7 @@ class ProjectsUI {
 
         // Prevenir que la imagen cierre el visor
         this.fullscreenImage.addEventListener('click', (e) => {
-            e.stopPropagation();
+            this.closeFullscreenImage();
         });
     }
 

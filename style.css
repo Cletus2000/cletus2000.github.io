@@ -150,7 +150,7 @@ header {
     width: 100%;
     background: var(--color-background-primary);
     backdrop-filter: blur(10px);
-    z-index: 100;
+    z-index: 999999;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     transition: var(--transition);
     text-align: center;
@@ -941,10 +941,7 @@ footer {
     .hero-content h1 {
         font-size: 2.5rem;
     }
-    
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
+
     
     .about-stats {
         grid-template-columns: 1fr;
@@ -1027,3 +1024,4 @@ footer {
         gap: 10px;
     }
 }
+

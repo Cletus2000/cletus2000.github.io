@@ -147,15 +147,20 @@
         
         .popup {
             background-color: var(--color-elements);
-            width: 85%;
-            max-width: 1200px;
+            position: absolute;
+            top: 40px;
+            width: 70%;
             height: 85%;
-            max-height: 1000px;
             border-radius: 20px;
             overflow: hidden;
             position: relative;
             display: flex;
             flex-direction: column;
+        }
+        @media (max-width: 1500px) {
+            .popup {
+                width: 85%;
+            }
         }
         
         .popup-content {
