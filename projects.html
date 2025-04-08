@@ -42,6 +42,13 @@
             background-color: var(--color-subelements);
             color: var(--color-text-primary);
         }
+
+        input[type="text"]:focus,
+        select:focus {
+            outline: none;
+            box-shadow: none;
+            border-color: var(--color-accent-primary); /* Opcional, por si quieres que se mantenga el mismo color del borde */
+        }
         
         .tag-filters {
             display: flex;
@@ -58,7 +65,6 @@
             font-family: var(--font-primary);
             font-weight: 500;
             transition: var(--transition);
-            box-shadow: var(--shadow);
             color: var(--color-text-secondary);
         }
         
@@ -301,15 +307,15 @@
     <div class="container">
         <nav>
             <a href="index.html" class="logo">
-                <div class="logo" data-en="Carlos Rocamora" data-es="Carlos Rocamora">Carlos Rocamora</div>
+                <div class="logo" data-en="Carlos Rocamora" data-es="Carlos Rocamora"></div>
             </a>
             <ul class="nav-links">
-                <li><a href="index.html" data-en="Home" data-es="Inicio">Home</a></li>
-                <li><a href="#about" data-en="About Me" data-es="Sobre Mí">About Me</a></li>
-                <li><a href="#projects" data-en="Projects" data-es="Proyectos">Projects</a></li>
-                <li><a href="#skills" data-en="Skills" data-es="Habilidades">Skills</a></li>
-                <li><a href="#education" data-en="Experience" data-es="Experiencia">Experience</a></li>
-                <li><a href="#contact" data-en="Contact" data-es="Contacto">Contact</a></li>
+                <li><a href="index.html#home" data-en="Home" data-es="Inicio"></a></li>
+                <li><a href="index.html#about" data-en="About Me" data-es="Sobre Mí"></a></li>
+                <li><a href="projects.html" data-en="Projects" data-es="Proyectos"></a></li>
+                <li><a href="index.html#skills" data-en="Skills" data-es="Habilidades"></a></li>
+                <li><a href="index.html#education" data-en="Experience" data-es="Experiencia"></a></li>
+                <li><a href="index.html#contact" data-en="Contact" data-es="Contacto"></a></li>
                 <button id="theme-toggle"><i class="fas fa-moon"></i></button>
                 <button id="language-toggle">
                     <img src="https://flagcdn.com/w40/us.png" alt="US" class="flag-icon">
@@ -365,6 +371,18 @@
             </div>
         </div>
     </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p data-en="&copy; 2025 Carlos Rocamora Colomer. All rights reserved." data-es="&copy; 2025 Carlos Rocamora Colomer. Todos los derechos reservados.">&copy; 2025 Carlos Rocamora Colomer. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="index.html#home" data-en="Home" data-es="Inicio">Home</a>
+                    <a href="projects.html" data-en="Projects" data-es="Proyectos">Projects</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script src="main.js"></script>
 </body>
