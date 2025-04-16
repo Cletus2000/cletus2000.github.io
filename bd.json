@@ -16,9 +16,9 @@
         "thumbnail": "./img/hero-bg.svg",
         "images": [
             "./img/hero-bg.svg",
-            "./img/PosterDonutPanic!.png",
+            "./img/PosterDonutPanic!.webp",
             "./img/hero-bg.svg",
-            "./img/qr-code.png",
+            "./img/qr-code.webp",
             "./img/hero-bg.svg"
         ],
         "tags": {
