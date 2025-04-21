@@ -1,5 +1,12 @@
 User-agent: *
-Disallow: /
+Allow: /
 Allow: /index.html
 Allow: /projects.html
-Allow: /projects/
+Allow: /projects/*.html
+
+# Excluir páginas específicas que no deben indexarse
+Disallow: /contacted.html
+Disallow: /google184d23cc688a4650.html
+
+# Ubicación del sitemap
+Sitemap: https://cletus2000.github.io/sitemap.xml
